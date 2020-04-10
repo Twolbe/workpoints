@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" contentt="text/html; cahrset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Главная{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'workpoint/style.css'%}">
+</head>
+
+<body>
+    <header>
+        <h1>CHECK OUTPUT</h1>
+    </header>
+    <nav>
+        <a href="{% url 'index' %}">CHECK OUTPUT PAGE</a>
+        {% for maintask in maintasks %}
+        <a href="{% url 'by_maintask' maintask.pk %}">{{ maintask.title }}</a>
+        {% endfor %}
+        <a href="{% url 'add' %}">ADD NEW POINT</a>
+        <a href="{% url 'addmaintask' %}">ADD NEW MAIN TASK</a>
+    </nav>
+    <section>
+        {% block content %}
+        {% endblock %}
+    </section>
+</body>
+
+</html>

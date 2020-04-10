@@ -1,0 +1,20 @@
+{% extends "layout/basic.html" %}
+
+{% block content %}
+{% for point in points %}
+<div class='b'>
+    <h2>{{ point.tag }}</h2>
+    <p>{{ point.description }}</p>
+    <p>{{ point.resolution }}</p>
+    <p>{{ point.date_init }}</p>
+    <p> {% if point.status == 'p'  %}
+        Processing
+        {% elif point.status == 'd' %}
+        Done
+        {% else %}
+        New
+        {% endif %}
+    </p>
+</div>
+{% endfor %}
+{% endblock %}
