@@ -18,8 +18,8 @@ from django.urls import path, re_path, include
 from workpoint.views import index
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('workpoint/', include('workpoint.urls')),
+    path("admin/", admin.site.urls),
+    path("", include("workpoint.urls")),
 ]
 
 from django.conf import settings

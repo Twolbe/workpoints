@@ -7,6 +7,7 @@ class PointForm(ModelForm):
         model = Point
         fields = ("tag", "description", "resolution", "status", "maintask")
 
+
 class MainTaskForm(ModelForm):
     class Meta:
         model = MainTask
